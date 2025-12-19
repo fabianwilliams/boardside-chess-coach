@@ -2,11 +2,12 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--color-bg-primary);
 }
 
 .main-content {
   flex: 1;
-  max-width: 1200px;
+  max-width: var(--max-width-content);
   width: 100%;
   margin: 0 auto;
   padding: 0;
