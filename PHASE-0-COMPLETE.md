@@ -347,3 +347,153 @@ Once approved, this project is ready to move immediately to Phase 1 implementati
 **Next Phase:** 1 (Implementation)
 **Repository:** boardside-chess-coach
 **Branch:** main
+
+---
+
+## Phase 0 Corrections Applied
+
+**Date:** 2025-12-19
+**Status:** ✅ Complete
+
+### What Changed
+
+The following corrections were applied to Phase 0 documentation based on spec review:
+
+#### 1. ✅ Static Dataset Approach (MVP Simplification)
+**What changed:**
+- Removed references to dynamic per-game imports in ARCHITECTURE.md
+- Added explicit documentation that MVP uses single static `sample-games.json` file
+- Clarified this is intentional for Azure Static Web Apps reliability and CDN caching predictability
+
+**Why:**
+- Eliminates runtime fetch failures in static hosting
+- Predictable CDN caching behavior (single asset)
+- Simpler deployment without managing multiple game files
+- Future enhancement path documented (lazy loading for 10+ games)
+
+**Where:**
+- SPEC.md: Section 7.2 (Data Validation Rules)
+- ARCHITECTURE.md: Section 11.3 (Data Loading)
+
+---
+
+#### 2. ✅ Player Profile Terminology Standardization
+**What changed:**
+- Standardized user-facing terminology to "Player Profile (Archetype)"
+- Quiz is the mechanism; Player Profile is the persistent outcome
+- Updated routes, UI copy, and navigation to use "Profile / Settings"
+- localStorage documentation clarified: stores archetype code, surfaces as Player Profile
+
+**Why:**
+- Clearer user-facing concept (avoids jargon like "archetype result")
+- Distinguishes mechanism (quiz) from outcome (profile)
+- More intuitive for non-chess players
+
+**Where:**
+- SPEC.md: FR-1.7, FR-1.8, FR-1.9, Routes table, Header layout, NFR-4.1
+- ARCHITECTURE.md: Pages table, localStorage section, Privacy section
+- BACKLOG.md: Task 14 renamed to "Player Profile Context Provider", Task 23 renamed to "Profile / Settings Page"
+
+---
+
+#### 3. ✅ CSP Security Headers (Chessboard Compatibility)
+**What changed:**
+- Added explicit CSP considerations section in ARCHITECTURE.md
+- Documented that `img-src 'self' data:` allows SVG sprites and data URIs for chess pieces
+- Added guidance: adjust CSP minimally if rendering fails, don't weaken beyond necessity
+- Updated SPEC.md NFR-4.4 to include chessboard rendering requirements
+
+**Why:**
+- Prevents production CSP violations blocking chessboard rendering
+- Documents common adjustments (blob:, external CDN domains if needed)
+- Maintains security posture while ensuring functionality
+
+**Where:**
+- SPEC.md: NFR-4.4 (Security requirements)
+- ARCHITECTURE.md: Section 9.1 (Azure Static Web Apps Configuration)
+
+---
+
+#### 4. ✅ Testing Stack Alignment (No Changes Needed)
+**What changed:**
+- Verified ADR-0001, SPEC.md, and BACKLOG.md all specify Jest + React Testing Library + Playwright
+- No Vitest references found in implementation docs (only mentioned as alternative in ADR-0001)
+- Testing stack is already consistently documented
+
+**Why:**
+- ADR-0001 is source of truth: Jest/RTL for unit/integration, Playwright for E2E
+- Proven stack with wide adoption (reduces risk)
+- Can migrate to Vitest post-MVP if desired (documented in ADR-0001)
+
+**Where:**
+- ADR-0001: Section 4 (Testing Framework decision)
+- SPEC.md: Section 9 (Testing Strategy)
+- BACKLOG.md: Task 1 (dependencies list), Task 24 (E2E tests)
+
+---
+
+#### 5. ✅ Dataset Validation as Day-1 CI Gate
+**What changed:**
+- Task 10 (Data Validation Tests) marked as **CI GATE - BLOCKING**
+- Added explicit gating rule: Tasks 11-27 (all UI work) must not begin until Task 10 passes
+- Expanded dataset invariants in SPEC.md with CI enforcement requirements
+- Updated testing strategy to emphasize dataset validation as required gate
+
+**Why:**
+- Prevents UI work on invalid/broken game data
+- Catches data errors early (before UI implementation)
+- CI-enforced: PRs cannot merge if dataset validation fails
+- Reduces risk of discovering data issues late in development
+
+**What's enforced:**
+- All PGN strings must be legal (chess.js validation)
+- Ply numbers must match move counts
+- Phase boundaries must not overlap
+- Side A and Side B must share initial position (first 1-2 moves)
+- All annotation principles must exist in knowledge-base.json
+- Quiz and KB schemas validated
+
+**Where:**
+- SPEC.md: Section 7.2 (Dataset Invariants with CI gates), Section 9.3 (Data Validation Tests)
+- BACKLOG.md: Task 10 (enhanced with gating rule and CI-blocking emphasis)
+
+---
+
+### What Remains for Phase 1
+
+**Phase 1 can now begin** with the following clarifications in place:
+
+1. **Dataset approach:** Single static JSON file (sample-games.json)
+2. **Terminology:** "Player Profile" for UI, "archetype" in code
+3. **Security:** CSP configured for chessboard compatibility
+4. **Testing:** Jest + RTL + Playwright (ADR-0001 is authoritative)
+5. **Gating:** Dataset validation (Task 10) must pass before UI work begins
+
+**Implementation order:**
+- Complete Tasks 1-10 (foundation, domain, data, validation)
+- Ensure Task 10 (dataset validation) passes in CI
+- **Gate:** Only after Task 10 passes, begin Tasks 11-27 (UI and features)
+
+**No code written yet:** Phase 0 remains documentation-only. Vite scaffolding, package.json, React code, and CI workflows will be created in Phase 1 Task 1.
+
+---
+
+### Commits Applied
+
+```
+0f1644c docs: clarify static dataset + player profile terminology
+```
+
+All corrections applied in a single focused commit covering:
+- Static dataset approach documentation
+- Player Profile terminology standardization
+- CSP chessboard compatibility guidance
+- Dataset validation CI gating (Task 10 reordering)
+
+---
+
+### Review Status
+
+**Phase 0 Corrections:** ✅ Complete
+**Phase 0 Overall:** 🟡 Awaiting Approval
+**Ready for Phase 1:** ✅ Yes (upon approval)
