@@ -951,16 +951,34 @@ Content-Security-Policy:
 
 ### 11.3 Data Loading
 
-**Static imports (MVP):**
-- Single game database file: `sample-games.json` loaded at build time (bundled)
-- Quiz questions and knowledge base also bundled
-- No runtime fetch calls
-- **Rationale:** Intentional MVP simplification for Azure Static Web Apps reliability and CDN caching predictability
+**MVP: Static Imports Only**
 
-**Future: Per-game lazy loading (Post-MVP):**
-- When game library grows beyond 10-15 games, consider dynamic imports
-- Pattern: `const game = await import(`./data/games/${id}.json`)`
-- Trade-off: Initial load time vs. total bundle size
+All game data is loaded via static import statements and bundled at build time:
+
+```typescript
+// In App.tsx or data loader module
+import gamesData from './data/sample-games.json';
+import quizQuestions from './data/quiz-questions.json';
+import knowledgeBase from './data/knowledge-base.json';
+```
+
+**MVP Characteristics:**
+- **Single JSON file per dataset:** `sample-games.json`, `quiz-questions.json`, `knowledge-base.json`
+- **Bundled at build time:** Vite includes all data in the application bundle
+- **No runtime fetch calls:** No `fetch()`, no `import()`, no network requests for data
+- **All games in one file:** `sample-games.json` contains the complete games array (2 games in MVP)
+- **Rationale:** Intentional simplification for Azure Static Web Apps reliability, CDN caching predictability, and deployment simplicity
+
+**Post-MVP: Per-Game Lazy Loading (Future Enhancement)**
+
+When the game library grows beyond 10-15 games, consider splitting into individual files:
+
+```typescript
+// Future pattern (NOT MVP)
+const game = await import(`./data/games/${id}.json`);
+```
+
+**Trade-off:** Initial load time vs. total bundle size. For MVP with 2 games, static imports are simpler and more reliable.
 
 ---
 
