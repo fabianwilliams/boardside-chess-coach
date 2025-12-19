@@ -1,0 +1,552 @@
+{
+  "schemaVersion": "1.0",
+  "principles": [
+    {
+      "id": "center-control",
+      "name": "Center Control",
+      "definition": "Occupying and influencing the central squares (d4, d5, e4, e5) with pawns and pieces.",
+      "importance": "The center is the most important area of the board because pieces placed there control more squares and can quickly switch between attacking different sides.",
+      "examples": [
+        "1.e4 occupies e4 and controls d5 and f5",
+        "1.d4 occupies d4 and controls c5 and e5",
+        "Knights on central squares (e4, d4, e5, d5) are ideally placed"
+      ],
+      "relatedConcepts": ["space-advantage", "piece-activity", "initiative"],
+      "commonMistakes": [
+        "Allowing opponent to control the center without contesting it",
+        "Advancing center pawns too aggressively without support",
+        "Ignoring central pawn breaks when strategically favorable"
+      ]
+    },
+    {
+      "id": "piece-development",
+      "name": "Piece Development",
+      "definition": "Moving pieces from their starting squares to more active positions, typically in the opening phase.",
+      "importance": "Developed pieces work together better, control more of the board, and are ready to participate in tactics and attacks.",
+      "examples": [
+        "Nf3 and Nc3 develop knights toward the center",
+        "Bc4 and Bb5 develop bishops actively",
+        "Castling completes minor piece development and connects rooks"
+      ],
+      "relatedConcepts": ["tempo", "initiative", "piece-activity"],
+      "commonMistakes": [
+        "Moving the same piece multiple times in the opening",
+        "Developing the queen too early",
+        "Making pawn moves instead of developing pieces"
+      ]
+    },
+    {
+      "id": "king-safety",
+      "name": "King Safety",
+      "definition": "Protecting the king from immediate and potential threats, usually by castling early.",
+      "importance": "An unsafe king can lead to devastating tactical combinations and checkmate. King safety should be prioritized over material in many positions.",
+      "examples": [
+        "Castling kingside (O-O) moves the king to safety",
+        "Creating a pawn shelter around the castled king",
+        "Avoiding weakening moves like h3 or g3 without reason"
+      ],
+      "relatedConcepts": ["tactics", "checkmate-patterns", "prophylaxis"],
+      "commonMistakes": [
+        "Delaying castling too long",
+        "Castling into an attack",
+        "Weakening the pawn structure around the king unnecessarily"
+      ]
+    },
+    {
+      "id": "initiative",
+      "name": "Initiative",
+      "definition": "Having the ability to make threats and force the opponent to respond to your plans rather than executing their own.",
+      "importance": "The player with initiative controls the game's direction and can often convert it into concrete advantages.",
+      "examples": [
+        "Developing with threats (Nf3 attacking e5)",
+        "Creating multiple threats simultaneously",
+        "Maintaining pressure after gaining the initiative"
+      ],
+      "relatedConcepts": ["tempo", "threats", "piece-activity"],
+      "commonMistakes": [
+        "Making slow moves when you have initiative",
+        "Allowing the opponent to consolidate their position",
+        "Trading pieces when you have the initiative without good reason"
+      ]
+    },
+    {
+      "id": "tempo",
+      "name": "Tempo",
+      "definition": "A unit of time in chess, typically represented by one move. Gaining tempo means forcing your opponent to waste moves.",
+      "importance": "In the opening and sharp positions, each tempo can be crucial. Wasting tempi often leads to falling behind in development or allowing opponent's plans.",
+      "examples": [
+        "Attacking a piece forcing it to move again",
+        "Developing with check gains a tempo",
+        "Making moves that accomplish multiple purposes"
+      ],
+      "relatedConcepts": ["development", "initiative", "efficiency"],
+      "commonMistakes": [
+        "Making unnecessary pawn moves in the opening",
+        "Moving pieces multiple times without purpose",
+        "Chasing material while falling behind in development"
+      ]
+    },
+    {
+      "id": "piece-activity",
+      "name": "Piece Activity",
+      "definition": "How effectively pieces control important squares and participate in the game plan.",
+      "importance": "Active pieces create threats, defend key squares, and give you more options. Passive pieces are targets and limit your possibilities.",
+      "examples": [
+        "Rooks on open files",
+        "Bishops on long diagonals",
+        "Knights on outposts in enemy territory"
+      ],
+      "relatedConcepts": ["space-advantage", "piece-coordination", "outposts"],
+      "commonMistakes": [
+        "Leaving pieces on passive squares",
+        "Trading active pieces for passive ones",
+        "Ignoring opportunities to activate pieces"
+      ]
+    },
+    {
+      "id": "pawn-structure",
+      "name": "Pawn Structure",
+      "definition": "The arrangement of pawns on the board, including their strengths (chains, passed pawns) and weaknesses (isolated, doubled).",
+      "importance": "Pawn structure often determines the long-term plan because pawns cannot move backwards and create lasting characteristics.",
+      "examples": [
+        "Isolated queen pawn can be weak or dynamic",
+        "Pawn chains point toward where you should attack",
+        "Passed pawns should be pushed in the endgame"
+      ],
+      "relatedConcepts": ["strategy", "endgame", "weaknesses"],
+      "commonMistakes": [
+        "Creating pawn weaknesses without compensation",
+        "Ignoring opponent's pawn breaks",
+        "Misunderstanding when to maintain vs change the pawn structure"
+      ]
+    },
+    {
+      "id": "space-advantage",
+      "name": "Space Advantage",
+      "definition": "Controlling more of the board than your opponent, typically by advancing pawns and placing pieces on the opponent's half.",
+      "importance": "More space gives you more room to maneuver pieces, while restricting your opponent's options and mobility.",
+      "examples": [
+        "Advanced pawn center restricts enemy pieces",
+        "Controlling the 4th and 5th ranks",
+        "Restricting opponent's piece placement"
+      ],
+      "relatedConcepts": ["center-control", "piece-activity", "restriction"],
+      "commonMistakes": [
+        "Overextending pawns without support",
+        "Having space but no concrete plan to use it",
+        "Allowing opponent to break your space advantage with tactical shots"
+      ]
+    },
+    {
+      "id": "tactical-patterns",
+      "name": "Tactical Patterns",
+      "definition": "Common combinations and tactical motifs that win material or deliver checkmate.",
+      "importance": "Recognizing tactical patterns allows you to spot winning combinations and avoid falling into traps.",
+      "examples": [
+        "Forks attack two pieces simultaneously",
+        "Pins restrict piece movement",
+        "Skewers force a valuable piece to move, exposing another",
+        "Discovered attacks reveal hidden threats"
+      ],
+      "relatedConcepts": ["calculation", "threats", "pattern-recognition"],
+      "commonMistakes": [
+        "Missing opponent's tactical threats",
+        "Calculating only your own tactics",
+        "Ignoring defensive tactics"
+      ]
+    },
+    {
+      "id": "checkmate-patterns",
+      "name": "Checkmate Patterns",
+      "definition": "Standard mating patterns that occur frequently in games.",
+      "importance": "Knowing checkmate patterns helps you deliver mate when winning and defend against mate threats.",
+      "examples": [
+        "Back rank mate with rook or queen",
+        "Scholar's mate (Qf7#)",
+        "Smothered mate with knight",
+        "Two rooks on the 7th rank"
+      ],
+      "relatedConcepts": ["king-safety", "tactical-patterns", "attack"],
+      "commonMistakes": [
+        "Missing forced checkmate sequences",
+        "Trading pieces when mate is possible",
+        "Forgetting about back rank weaknesses"
+      ]
+    },
+    {
+      "id": "prophylaxis",
+      "name": "Prophylaxis",
+      "definition": "Preventing your opponent's plans and threats before they become dangerous.",
+      "importance": "Good prophylaxis stops opponent's ideas before they start, maintaining your advantage and limiting their options.",
+      "examples": [
+        "Playing h3 to prevent Bg4 pin",
+        "Controlling key squares to prevent piece placement",
+        "Creating luft for the king to prevent back rank threats"
+      ],
+      "relatedConcepts": ["strategy", "defense", "planning"],
+      "commonMistakes": [
+        "Being too focused on your own plans",
+        "Ignoring opponent's threats until they're dangerous",
+        "Over-prophylaxis leading to passive play"
+      ]
+    },
+    {
+      "id": "simplification",
+      "name": "Simplification",
+      "definition": "Trading pieces to reduce complexity, typically when ahead in material or with a better endgame.",
+      "importance": "Simplification can neutralize opponent's counterplay, make advantages easier to convert, or relieve defensive pressure.",
+      "examples": [
+        "Trading pieces when ahead in material",
+        "Simplifying to a favorable endgame",
+        "Trading off opponent's active pieces"
+      ],
+      "relatedConcepts": ["endgame", "strategy", "defense"],
+      "commonMistakes": [
+        "Trading when behind in material",
+        "Simplifying into a drawn endgame when winning",
+        "Avoiding trades when you need to simplify"
+      ]
+    },
+    {
+      "id": "open-lines",
+      "name": "Open Lines",
+      "definition": "Files and diagonals without pawns, allowing pieces (especially rooks and bishops) to operate effectively.",
+      "importance": "Open lines provide avenues for attack and piece activity. Controlling them often leads to tactical opportunities.",
+      "examples": [
+        "Rooks on open files target enemy pieces",
+        "Bishops on long diagonals control important squares",
+        "Open lines toward the enemy king create mating attacks"
+      ],
+      "relatedConcepts": ["piece-activity", "rook-placement", "attack"],
+      "commonMistakes": [
+        "Opening lines when your king is vulnerable",
+        "Allowing opponent to control the open lines",
+        "Not utilizing open lines with your pieces"
+      ]
+    },
+    {
+      "id": "threats",
+      "name": "Creating Threats",
+      "definition": "Moves that force the opponent to respond to immediate dangers, maintaining initiative.",
+      "importance": "Threats force your opponent into a defensive mindset and limit their options for active play.",
+      "examples": [
+        "Attacking undefended pieces",
+        "Threatening checkmate",
+        "Creating multiple threats at once"
+      ],
+      "relatedConcepts": ["initiative", "tactics", "forcing-moves"],
+      "commonMistakes": [
+        "Making empty threats the opponent can ignore",
+        "Focusing on threats while ignoring your own weaknesses",
+        "Creating threats that help opponent's development"
+      ]
+    },
+    {
+      "id": "piece-coordination",
+      "name": "Piece Coordination",
+      "definition": "Having your pieces work together harmoniously toward a common goal.",
+      "importance": "Coordinated pieces are more powerful than the sum of their parts, creating unstoppable threats.",
+      "examples": [
+        "Queen and rook battery on a file",
+        "Two bishops controlling complementary diagonals",
+        "Knight and bishop attacking together"
+      ],
+      "relatedConcepts": ["piece-activity", "strategy", "attack"],
+      "commonMistakes": [
+        "Having pieces work at cross purposes",
+        "Leaving pieces uncoordinated",
+        "Moving pieces away from the main battle"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "tempo",
+      "name": "Tempo",
+      "category": "fundamentals",
+      "definition": "A unit of time in chess represented by one move. Gaining tempo means forcing opponent to waste moves.",
+      "keyPoints": [
+        "Each move is a precious resource",
+        "Wasting tempi in the opening leads to disadvantage",
+        "Attacking pieces to gain tempi is a key tactic"
+      ]
+    },
+    {
+      "id": "space",
+      "name": "Space",
+      "category": "strategy",
+      "definition": "The amount of the board controlled by your pieces and pawns.",
+      "keyPoints": [
+        "More space = more room for your pieces",
+        "Restricts opponent's mobility",
+        "Can be overextended if not careful"
+      ]
+    },
+    {
+      "id": "initiative",
+      "name": "Initiative",
+      "category": "strategy",
+      "definition": "The ability to make threats and dictate the course of the game.",
+      "keyPoints": [
+        "Force opponent to respond to your threats",
+        "Can be more valuable than material",
+        "Lost by making slow, aimless moves"
+      ]
+    },
+    {
+      "id": "piece-activity",
+      "name": "Piece Activity",
+      "category": "fundamentals",
+      "definition": "How effectively your pieces control squares and participate in your plans.",
+      "keyPoints": [
+        "Active pieces on good squares",
+        "Passive pieces are targets",
+        "Activate pieces before attacking"
+      ]
+    },
+    {
+      "id": "pawn-breaks",
+      "name": "Pawn Breaks",
+      "category": "strategy",
+      "definition": "Pawn advances that open the position and challenge opponent's structure.",
+      "keyPoints": [
+        "Essential for creating imbalances",
+        "Timing is critical",
+        "Prepare with piece development first"
+      ]
+    },
+    {
+      "id": "outposts",
+      "name": "Outposts",
+      "category": "strategy",
+      "definition": "Strong squares for pieces, typically protected by pawns and not attackable by enemy pawns.",
+      "keyPoints": [
+        "Knights thrive on outposts",
+        "Usually on 5th or 6th rank",
+        "Create long-term advantages"
+      ]
+    },
+    {
+      "id": "weak-squares",
+      "name": "Weak Squares",
+      "category": "strategy",
+      "definition": "Squares that cannot be defended by pawns and become targets for enemy pieces.",
+      "keyPoints": [
+        "Result from pawn advances",
+        "Perfect for opponent's pieces",
+        "Can be exploited long-term"
+      ]
+    },
+    {
+      "id": "back-rank",
+      "name": "Back Rank Weakness",
+      "category": "tactics",
+      "definition": "Vulnerability when the king is trapped on its back rank by its own pawns.",
+      "keyPoints": [
+        "Common mating pattern",
+        "Create luft to prevent",
+        "Rooks dominate back ranks"
+      ]
+    },
+    {
+      "id": "pin",
+      "name": "Pin",
+      "category": "tactics",
+      "definition": "Attacking a piece that cannot move without exposing a more valuable piece behind it.",
+      "keyPoints": [
+        "Absolute pins involve the king",
+        "Relative pins involve other pieces",
+        "Breaking pins is important"
+      ]
+    },
+    {
+      "id": "fork",
+      "name": "Fork",
+      "category": "tactics",
+      "definition": "Attacking two or more enemy pieces simultaneously with one piece.",
+      "keyPoints": [
+        "Knights are excellent forking pieces",
+        "Forces opponent to lose material",
+        "Look for family forks (king + queen)"
+      ]
+    },
+    {
+      "id": "skewer",
+      "name": "Skewer",
+      "category": "tactics",
+      "definition": "Forcing a valuable piece to move, exposing a less valuable piece behind it.",
+      "keyPoints": [
+        "Reverse of a pin",
+        "Bishops and rooks excel at skewers",
+        "King must move when in check"
+      ]
+    },
+    {
+      "id": "discovered-attack",
+      "name": "Discovered Attack",
+      "category": "tactics",
+      "definition": "Moving one piece to reveal an attack by another piece behind it.",
+      "keyPoints": [
+        "Very powerful tactic",
+        "Moving piece can make its own threat",
+        "Discovered checks are especially strong"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "id": "faq001",
+      "question": "What should I do first in a chess game?",
+      "answer": "Start by controlling the center with pawns (e4 or d4), then develop your knights and bishops toward the center, castle early for king safety, and connect your rooks.",
+      "category": "opening",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq002",
+      "question": "When should I castle?",
+      "answer": "Castle early, typically within the first 10 moves. Don't delay unless you have a specific tactical reason. King safety should be a priority before launching attacks.",
+      "category": "opening",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq003",
+      "question": "How do I know if a piece is well-placed?",
+      "answer": "A piece is well-placed if it controls important squares, participates in your plan, is safe from capture, and has mobility. Central squares are generally better than edge squares.",
+      "category": "strategy",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq004",
+      "question": "Should I trade pieces when I'm ahead in material?",
+      "answer": "Yes, generally. Trading pieces when ahead makes your advantage more significant because your opponent has fewer pieces to create counterplay. Aim for simple, winning endgames.",
+      "category": "strategy",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "faq005",
+      "question": "What is a 'tempo' in chess?",
+      "answer": "A tempo is a single move or unit of time. Gaining a tempo means forcing your opponent to waste a move, often by attacking their pieces and making them move again.",
+      "category": "fundamentals",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq006",
+      "question": "How do I create a plan in the middlegame?",
+      "answer": "Look at the position's features: pawn structure, piece activity, king safety, and space. Create a plan that improves your worst piece, attacks opponent's weaknesses, or advances your most promising advantages.",
+      "category": "strategy",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "faq007",
+      "question": "When should I attack?",
+      "answer": "Attack when you have advantages: better development, safer king, more active pieces, or space advantage. Don't attack prematurely - develop and improve your position first.",
+      "category": "strategy",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "faq008",
+      "question": "What are the most important squares on the board?",
+      "answer": "The central squares (d4, d5, e4, e5) are most important because pieces placed there control more of the board and can quickly switch between both sides.",
+      "category": "fundamentals",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq009",
+      "question": "How do I defend against an attack?",
+      "answer": "Defend by: removing the attacker, defending the target, blocking the attack, or creating a counter-threat. Sometimes the best defense is a strong counter-attack.",
+      "category": "tactics",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "faq010",
+      "question": "What is a 'weak square'?",
+      "answer": "A weak square is one that cannot be defended by pawns and becomes an ideal outpost for opponent's pieces. They result from pawn advances that create permanent weaknesses.",
+      "category": "strategy",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "faq011",
+      "question": "Should I move pawns or pieces first?",
+      "answer": "Generally develop pieces before making many pawn moves. Start with 1-2 central pawn moves (e4/d4), then develop pieces. Save additional pawn moves for specific purposes.",
+      "category": "opening",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq012",
+      "question": "What is a 'pin' and how do I use it?",
+      "answer": "A pin attacks a piece that can't move without exposing a more valuable piece behind it. Use pins to restrict opponent's pieces and win material when they're forced to move the pinned piece.",
+      "category": "tactics",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq013",
+      "question": "How many moves should my opening preparation include?",
+      "answer": "For beginners, know the first 5-8 moves of your opening. Focus on understanding principles (center control, development, king safety) rather than memorizing many moves.",
+      "category": "opening",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq014",
+      "question": "When should I trade my bishop for a knight?",
+      "answer": "Trade bishop for knight when: the bishop is bad (blocked by your pawns), the knight has a strong outpost, or it helps your strategy. Bishops are often stronger in open positions.",
+      "category": "strategy",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "faq015",
+      "question": "What does 'initiative' mean?",
+      "answer": "Initiative means you're making threats and your opponent must respond defensively rather than executing their own plans. It's maintained by creating threats and keeping pressure.",
+      "category": "strategy",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq016",
+      "question": "How do I improve my tactical vision?",
+      "answer": "Practice tactical puzzles daily, always look for checks, captures, and attacks in every position, and analyze your games to find missed tactics.",
+      "category": "improvement",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq017",
+      "question": "What is 'prophylaxis'?",
+      "answer": "Prophylaxis means preventing your opponent's plans before they become dangerous. Look for their threats and ideas, then take action to stop them proactively.",
+      "category": "strategy",
+      "difficulty": "advanced"
+    },
+    {
+      "id": "faq018",
+      "question": "Should I always recapture when a piece is taken?",
+      "answer": "Not always. Consider if recapturing helps your position, or if you have a better move like creating a counter-threat. But don't let opponent win material for free.",
+      "category": "tactics",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "faq019",
+      "question": "What are the most common beginner mistakes?",
+      "answer": "Common mistakes: not castling early, moving pieces multiple times in opening, ignoring opponent's threats, trading pieces aimlessly, and attacking without development.",
+      "category": "improvement",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq020",
+      "question": "How do I know when the opening is over?",
+      "answer": "The opening ends when both sides have developed most pieces, castled, and begun executing middlegame plans. Usually around moves 10-15, but varies by opening.",
+      "category": "opening",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq021",
+      "question": "What should I study to improve fastest?",
+      "answer": "Focus on tactics (puzzles), basic endgames (king and pawn), opening principles (not memorization), and analyzing your own games to learn from mistakes.",
+      "category": "improvement",
+      "difficulty": "beginner"
+    },
+    {
+      "id": "faq022",
+      "question": "How important is calculation in chess?",
+      "answer": "Very important for tactics and critical moments, but understanding strategic principles and patterns is equally valuable. Improve both through practice.",
+      "category": "fundamentals",
+      "difficulty": "intermediate"
+    }
+  ]
+}
