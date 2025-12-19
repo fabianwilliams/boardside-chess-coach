@@ -122,3 +122,16 @@ export type Board = Map<Square, Piece>;
  * Navigation direction
  */
 export type NavigationDirection = 'forward' | 'backward';
+
+/**
+ * Educational annotation for a move
+ * Used for teaching chess principles and concepts
+ */
+export interface EducationalAnnotation {
+  /** Chess principle being illustrated */
+  principle: string;
+  /** Principle identifier (kebab-case) */
+  principleId: string;
+  /** Educational explanation text */
+  text: string;
+}
