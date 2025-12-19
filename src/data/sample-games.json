@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "1.0",
+  "games": [
+    {
+      "id": "wayward-queen-scholars-theme",
+      "title": "Wayward Queen Attack: Scholar’s Mate Theme",
+      "opening": "Wayward Queen Attack",
+      "difficulty": "Beginner",
+      "tags": ["opening", "king-safety", "development", "tactics"],
+      "description": "Two lines starting from the same early queen sortie. Side A shows what happens when Black ignores king safety. Side B shows a simple, principled defense that neutralizes the threat and reaches a comfortable position.",
+      "sides": {
+        "A": {
+          "label": "Side A (Attack succeeds quickly)",
+          "result": "1-0",
+          "pgn": "1. e4 e5 2. Qh5 Nc6 3. Bc4 Nf6?? 4. Qxf7#",
+          "annotations": [
+            { "ply": 1, "san": "e4", "principle": "Center Control", "text": "White claims central space and opens lines for the bishop and queen. This is the foundation for rapid development and early initiative." },
+            { "ply": 2, "san": "e5", "principle": "Symmetry", "text": "Black mirrors central control. Both sides now have open lines, which makes king safety and development especially urgent." },
+            { "ply": 3, "san": "Qh5", "principle": "Direct Threats", "text": "White immediately eyes f7, the weakest point in Black’s starting position. This is playable but risks wasting time with the queen." },
+            { "ply": 4, "san": "Nc6", "principle": "Development", "text": "Black develops while covering key squares. This also attacks the queen’s route and prepares to contest the center." },
+            { "ply": 5, "san": "Bc4", "principle": "King Safety", "text": "White completes the classic battery on f7: queen + bishop. The threat is now extremely concrete." },
+            { "ply": 6, "san": "Nf6??", "principle": "Blunder / Tactics", "text": "This develops, but it fails to address the immediate mate threat. Development is not useful if it allows forced mate." },
+            { "ply": 7, "san": "Qxf7#", "principle": "Checkmate Pattern", "text": "Mate. The king cannot capture because the bishop on c4 protects f7, and the king has no legal escape squares." }
+          ],
+          "phases": [
+            { "name": "Opening", "fromPly": 1, "toPly": 7, "overview": "A fast tactical finish. The key lesson is that king safety and immediate threats override ‘normal development’." },
+            { "name": "Middlegame", "fromPly": 8, "toPly": 8, "overview": "Not reached in this miniature." },
+            { "name": "Endgame", "fromPly": 9, "toPly": 9, "overview": "Not reached in this miniature." }
+          ]
+        },
+        "B": {
+          "label": "Side B (Defense succeeds; attacker loses momentum)",
+          "result": "0-1",
+          "pgn": "1. e4 e5 2. Qh5 Nc6 3. Bc4 g6 4. Qf3 Nf6 5. Ne2 Bg7 6. d3 O-O 7. O-O d6 8. h3 Be6 9. Bg5 Bxc4 10. dxc4 h6 11. Bxf6 Qxf6 12. Qxf6 Bxf6",
+          "annotations": [
+            { "ply": 1, "san": "e4", "principle": "Center Control", "text": "A sound central claim. Even when tactics appear early, strong openings start with center control and development." },
+            { "ply": 2, "san": "e5", "principle": "Symmetry", "text": "Black meets the center directly. This keeps options flexible and supports rapid piece activity." },
+            { "ply": 3, "san": "Qh5", "principle": "Early Queen Development", "text": "White targets f7. The strategic risk: the queen can become a tempo target, and White may fall behind in development." },
+            { "ply": 4, "san": "Nc6", "principle": "Development", "text": "Develop and hit the queen’s idea indirectly. Black adds control and prepares to defend f7 efficiently." },
+            { "ply": 5, "san": "Bc4", "principle": "Threat Creation", "text": "The battery is formed. Black must respond precisely to f7 pressure." },
+            { "ply": 6, "san": "g6", "principle": "Threat Neutralization", "text": "This calmly breaks the battery by challenging the queen’s line and preparing Bg7. It is a common, principled defense." },
+            { "ply": 7, "san": "Qf3", "principle": "Persistence vs Time", "text": "White keeps the idea alive, but continuing to ‘chase the mate’ often costs tempi that Black converts into development." },
+            { "ply": 8, "san": "Nf6", "principle": "Development", "text": "Now this development move is safe and effective because the mate threat has been defused." },
+            { "ply": 9, "san": "Ne2", "principle": "Slow Development", "text": "This is playable, but White is choosing slower routes after already spending time with the queen." },
+            { "ply": 10, "san": "Bg7", "principle": "King Safety", "text": "Black completes a key defensive setup: the king will castle and the bishop will pressure central squares." },
+            { "ply": 11, "san": "d3", "principle": "Stabilization", "text": "White solidifies the center, but the position is already drifting away from a direct attack. White must now ‘play chess’ rather than hunt mate." },
+            { "ply": 12, "san": "O-O", "principle": "Safety First", "text": "Black castles. The strategic message: defend first, then develop, then seek advantage." },
+            { "ply": 13, "san": "O-O", "principle": "Catch Up", "text": "White castles to catch up. This is often what happens after an over-ambitious opening: you must spend moves repairing structure and safety." },
+            { "ply": 14, "san": "d6", "principle": "Solid Structure", "text": "Black supports e5 and prepares ...Be6 to challenge White’s bishop and reduce attacking potential." },
+            { "ply": 15, "san": "h3", "principle": "Prophylaxis", "text": "A small luft/prophylaxis move, but it’s another tempo spent on the flank. In openings, tempi matter." },
+            { "ply": 16, "san": "Be6", "principle": "Challenge Key Piece", "text": "Black contests the active bishop. This is a typical plan: trade off your opponent’s most dangerous piece and emerge with easier play." },
+            { "ply": 17, "san": "Bg5", "principle": "Pin Attempt", "text": "White seeks activity. However, the original attack is gone, and now Black has comfortable development and a clear plan." },
+            { "ply": 18, "san": "Bxc4", "principle": "Simplification", "text": "Black exchanges a key attacker and simplifies into a position where White’s early queen adventure yields no lasting gain." },
+            { "ply": 19, "san": "dxc4", "principle": "Structure Tradeoff", "text": "White recaptures but accepts structural compromises. This is a common ‘cost’ when you chase early tactics and then get forced into reactive moves." },
+            { "ply": 20, "san": "h6", "principle": "Question the Pin", "text": "Black asks the bishop to decide. This is a thematic way to dissolve pins and gain space." },
+            { "ply": 21, "san": "Bxf6", "principle": "Concession", "text": "White gives up the bishop to avoid retreat. The net result is that Black reaches a simplified position with straightforward play." },
+            { "ply": 22, "san": "Qxf6", "principle": "Recenter the Queen", "text": "Black’s queen becomes active. Importantly, Black has no king danger anymore and can start thinking about central breaks and endgame edges." },
+            { "ply": 23, "san": "Qxf6", "principle": "Forced Simplification", "text": "White chooses a queen trade to reduce pressure. This is often the practical choice when the initiative is gone." },
+            { "ply": 24, "san": "Bxf6", "principle": "Endgame Edge", "text": "Black recaptures with a piece, completing a favorable simplification. In an MVP, we treat this as ‘strategy succeeds’ for Black: defend accurately, develop, simplify." }
+          ],
+          "phases": [
+            { "name": "Opening", "fromPly": 1, "toPly": 12, "overview": "Neutralize the immediate threat (…g6), then complete development and castle. The attacker’s initiative fades." },
+            { "name": "Middlegame", "fromPly": 13, "toPly": 20, "overview": "Convert the attacker’s lost tempi into concrete actions: challenge active pieces (…Be6), simplify, and improve piece coordination." },
+            { "name": "Endgame", "fromPly": 21, "toPly": 24, "overview": "Simplify into an endgame where the defender’s structure and development lead to comfortable play." }
+          ]
+        }
+      }
+    },
+    {
+      "id": "kings-pawn-principles-miniature",
+      "title": "King’s Pawn Principles: Fast Development vs Slow Tempi",
+      "opening": "Open Game (Principles Demo)",
+      "difficulty": "Beginner",
+      "tags": ["opening", "development", "tempo", "piece-activity"],
+      "description": "A longer, principles-oriented example designed for the Phases page. Side A follows basic development principles and wins material. Side B shows how slow, non-developing moves can be punished.",
+      "sides": {
+        "A": {
+          "label": "Side A (Develop quickly; win material)",
+          "result": "1-0",
+          "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Nc3 Nxe4 8. O-O Bxc3 9. d5 Bf6 10. Re1 Ne7 11. Rxe4 d6 12. Bg5 Bxg5 13. Nxg5 O-O 14. Nxh7 Kxh7 15. Rh4+ Kg8 16. Qh5",
+          "annotations": [
+            { "ply": 1, "san": "e4", "principle": "Center Control", "text": "White takes space and opens lines for rapid development." },
+            { "ply": 2, "san": "e5", "principle": "Center Control", "text": "Black matches in the center." },
+            { "ply": 3, "san": "Nf3", "principle": "Development", "text": "Develop and attack the center (e5). This also prepares castling." },
+            { "ply": 4, "san": "Nc6", "principle": "Development", "text": "Black develops and defends e5." },
+            { "ply": 5, "san": "Bc4", "principle": "Piece Activity", "text": "White develops with tempo toward the center and kingside." },
+            { "ply": 6, "san": "Bc5", "principle": "Symmetry", "text": "Black mirrors development, also targeting f2." },
+            { "ply": 7, "san": "c3", "principle": "Preparation", "text": "White prepares d4 to challenge the center with pawn support." },
+            { "ply": 8, "san": "Nf6", "principle": "Development", "text": "Black develops and increases pressure on e4." },
+            { "ply": 9, "san": "d4", "principle": "Central Break", "text": "A thematic strike: open lines when you are developed and ready to use them." },
+            { "ply": 10, "san": "exd4", "principle": "Clarify Tension", "text": "Black captures to resolve central tension." },
+            { "ply": 11, "san": "cxd4", "principle": "Open Lines", "text": "White recaptures, opening the c-file and keeping central presence." },
+            { "ply": 12, "san": "Bb4+", "principle": "Check with Purpose", "text": "Black checks and tries to disrupt development." },
+            { "ply": 13, "san": "Nc3", "principle": "Develop with Tempo", "text": "White blocks the check while developing. This is an ideal response pattern." },
+            { "ply": 14, "san": "Nxe4", "principle": "Grab Pawn (Risk)", "text": "Black wins a pawn but may fall behind in safety and coordination." },
+            { "ply": 15, "san": "O-O", "principle": "King Safety", "text": "White castles first—then starts tactical operations with a safe king." },
+            { "ply": 16, "san": "Bxc3", "principle": "Simplify Defense", "text": "Black trades a bishop to reduce pressure, but concedes the bishop pair." },
+            { "ply": 17, "san": "d5", "principle": "Initiative", "text": "White pushes with tempo, opening lines and restricting Black’s pieces." },
+            { "ply": 18, "san": "Bf6", "principle": "Retreat Under Pressure", "text": "Black must retreat; White’s initiative is doing work." },
+            { "ply": 19, "san": "Re1", "principle": "Rook to Open File", "text": "White places a rook on the e-file to pressure e4 and the center." },
+            { "ply": 20, "san": "Ne7", "principle": "Defend and Reposition", "text": "Black tries to consolidate, but space and tempo favor White." },
+            { "ply": 21, "san": "Rxe4", "principle": "Recover Material", "text": "White wins back the pawn and keeps initiative. In a principles demo, this is the ‘conversion’ moment." },
+            { "ply": 22, "san": "d6", "principle": "Stabilize", "text": "Black tries to stabilize the center and open lines for development." },
+            { "ply": 23, "san": "Bg5", "principle": "Develop with Threat", "text": "White develops and creates concrete pressure on f6/e7 structures." },
+            { "ply": 24, "san": "Bxg5", "principle": "Reduce Attackers", "text": "Black trades to reduce threats." },
+            { "ply": 25, "san": "Nxg5", "principle": "Maintain Pressure", "text": "White recaptures with a piece that can jump into tactics." },
+            { "ply": 26, "san": "O-O", "principle": "Catch Up", "text": "Black finally castles, but White is already dictating the pace." },
+            { "ply": 27, "san": "Nxh7", "principle": "Tactical Shot", "text": "A thematic raid to open lines. For training, the emphasis is initiative enabled by development." },
+            { "ply": 28, "san": "Kxh7", "principle": "Accept", "text": "Black accepts; the king is drawn into danger." },
+            { "ply": 29, "san": "Rh4+", "principle": "Attack the King", "text": "White brings a rook into the attack with tempo." },
+            { "ply": 30, "san": "Kg8", "principle": "Seek Shelter", "text": "Black tries to return to safety." },
+            { "ply": 31, "san": "Qh5", "principle": "Coordination", "text": "White’s pieces coordinate against the king. Lesson: development enables attack." }
+          ],
+          "phases": [
+            { "name": "Opening", "fromPly": 1, "toPly": 16, "overview": "Develop pieces, contest the center, and castle. Block checks while developing (Nc3) as a key habit." },
+            { "name": "Middlegame", "fromPly": 17, "toPly": 26, "overview": "Use space and tempo to win back material and improve piece activity. Put rooks on files and force concessions." },
+            { "name": "Endgame", "fromPly": 27, "toPly": 31, "overview": "Not a true endgame—treat as ‘late middlegame / king attack’ in the UI if desired." }
+          ]
+        },
+        "B": {
+          "label": "Side B (Slow moves; lose initiative and comfort)",
+          "result": "0-1",
+          "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. h3 Nf6 5. d3 d6 6. O-O O-O 7. c3 h6 8. Re1 a6 9. Nbd2 Be6 10. Bb3 Re8 11. Nf1 d5 12. exd5 Nxd5",
+          "annotations": [
+            { "ply": 1, "san": "e4", "principle": "Center Control", "text": "White starts correctly with central space." },
+            { "ply": 2, "san": "e5", "principle": "Center Control", "text": "Black matches in the center." },
+            { "ply": 3, "san": "Nf3", "principle": "Development", "text": "Develop and influence the center." },
+            { "ply": 4, "san": "Nc6", "principle": "Development", "text": "Black develops." },
+            { "ply": 5, "san": "Bc4", "principle": "Piece Activity", "text": "White develops actively." },
+            { "ply": 6, "san": "Bc5", "principle": "Piece Activity", "text": "Black mirrors development." },
+            { "ply": 7, "san": "h3", "principle": "Wasted Tempo", "text": "A slow, non-developing move in an open game. Early tempi are precious; prioritize development and central play." },
+            { "ply": 8, "san": "Nf6", "principle": "Development", "text": "Black continues developing and prepares to castle." },
+            { "ply": 9, "san": "d3", "principle": "Passive Center", "text": "Solid but passive compared to d4. Combined with h3, White is conceding initiative." },
+            { "ply": 10, "san": "d6", "principle": "Solid Structure", "text": "Black chooses a stable structure and keeps options open." },
+            { "ply": 11, "san": "O-O", "principle": "King Safety", "text": "White castles, but earlier slow moves mean Black will be comfortable." },
+            { "ply": 12, "san": "O-O", "principle": "Equalize", "text": "Black castles and reaches easy equality with good piece placement." },
+            { "ply": 13, "san": "c3", "principle": "Late Preparation", "text": "White prepares d4, but doing it late reduces its effect." },
+            { "ply": 14, "san": "h6", "principle": "Useful Waiting Move", "text": "With no pressure, Black can improve slowly and prevent ideas." },
+            { "ply": 15, "san": "Re1", "principle": "Good Idea, Late", "text": "Rook to the e-file is correct, but White ceded initiative earlier." },
+            { "ply": 16, "san": "a6", "principle": "Space / Flexibility", "text": "Black gains flexibility without tactical risk." },
+            { "ply": 17, "san": "Nbd2", "principle": "Development", "text": "White develops, but Black already has a comfortable plan." },
+            { "ply": 18, "san": "Be6", "principle": "Active Development", "text": "Black develops with tempo, preparing central breaks." },
+            { "ply": 19, "san": "Bb3", "principle": "Retreat", "text": "White retreats; Black’s plan is easier to execute." },
+            { "ply": 20, "san": "Re8", "principle": "Preparation", "text": "Black aligns rooks and prepares …d5." },
+            { "ply": 21, "san": "Nf1", "principle": "Over-Refinement", "text": "Slow maneuvering while Black is ready to strike the center." },
+            { "ply": 22, "san": "d5", "principle": "Central Break", "text": "Black seizes the moment to open lines—punishing White’s earlier slow moves." },
+            { "ply": 23, "san": "exd5", "principle": "Forced Reaction", "text": "White must react; Black’s pieces gain active targets." },
+            { "ply": 24, "san": "Nxd5", "principle": "Piece Activity", "text": "Knight centralizes with tempo. In the MVP, this represents the strategic ‘win’: better timing, more active play." }
+          ],
+          "phases": [
+            { "name": "Opening", "fromPly": 1, "toPly": 12, "overview": "Avoid slow pawn moves (like h3) without concrete purpose. Develop and castle." },
+            { "name": "Middlegame", "fromPly": 13, "toPly": 24, "overview": "Once development is complete, strike the center (…d5). Slow maneuvering is punished by central breaks." },
+            { "name": "Endgame", "fromPly": 25, "toPly": 25, "overview": "Not reached in this sample." }
+          ]
+        }
+      }
+    }
+  ]
+}
