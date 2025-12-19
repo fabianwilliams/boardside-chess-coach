@@ -23,9 +23,7 @@
             { "ply": 7, "san": "Qxf7#", "principle": "Checkmate Pattern", "text": "Mate. The king cannot capture because the bishop on c4 protects f7, and the king has no legal escape squares." }
           ],
           "phases": [
-            { "name": "Opening", "fromPly": 1, "toPly": 7, "overview": "A fast tactical finish. The key lesson is that king safety and immediate threats override ‘normal development’." },
-            { "name": "Middlegame", "fromPly": 8, "toPly": 8, "overview": "Not reached in this miniature." },
-            { "name": "Endgame", "fromPly": 9, "toPly": 9, "overview": "Not reached in this miniature." }
+            { "name": "Opening", "fromPly": 1, "toPly": 7, "overview": "A fast tactical finish. The key lesson is that king safety and immediate threats override 'normal development'." }
           ]
         },
         "B": {
@@ -149,8 +147,7 @@
           ],
           "phases": [
             { "name": "Opening", "fromPly": 1, "toPly": 12, "overview": "Avoid slow pawn moves (like h3) without concrete purpose. Develop and castle." },
-            { "name": "Middlegame", "fromPly": 13, "toPly": 24, "overview": "Once development is complete, strike the center (…d5). Slow maneuvering is punished by central breaks." },
-            { "name": "Endgame", "fromPly": 25, "toPly": 25, "overview": "Not reached in this sample." }
+            { "name": "Middlegame", "fromPly": 13, "toPly": 24, "overview": "Once development is complete, strike the center (…d5). Slow maneuvering is punished by central breaks." }
           ]
         }
       }
