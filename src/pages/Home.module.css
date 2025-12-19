@@ -1,0 +1,294 @@
+.container {
+  padding: var(--spacing-8) var(--spacing-6);
+  max-width: var(--max-width-xl);
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: var(--spacing-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-6);
+}
+
+.headerContent {
+  flex: 1;
+}
+
+.title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+}
+
+.archetypeDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-2);
+}
+
+.archetypeLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* Quiz Banner */
+.quizBanner {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-800) 0%,
+    var(--color-primary-600) 100%
+  );
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
+  box-shadow: var(--shadow-lg);
+}
+
+.quizBannerContent {
+  max-width: 600px;
+}
+
+.quizBannerTitle {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-text-primary);
+}
+
+.quizBannerText {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-6);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Filters */
+.filters {
+  margin-bottom: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--font-size-base);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-base);
+  color: var(--color-text-primary);
+  transition: all var(--transition-base);
+}
+
+.searchInput:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-color: var(--color-primary-500);
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.difficultyFilters {
+  display: flex;
+  gap: var(--spacing-2);
+  flex-wrap: wrap;
+}
+
+.difficultyButton {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--color-bg-card);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.difficultyButton:hover {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+.difficultyButton.active {
+  background-color: var(--color-primary-600);
+  color: var(--color-text-primary);
+  border-color: var(--color-primary-600);
+}
+
+.difficultyButton:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Game Grid */
+.gameGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+.gameCard {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.gameCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-500);
+}
+
+.gameCard:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.gameCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+}
+
+.gameTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+  color: var(--color-text-primary);
+  flex: 1;
+}
+
+.difficulty {
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.difficulty-beginner {
+  background-color: rgba(129, 199, 132, 0.15);
+  color: var(--color-success-text);
+}
+
+.difficulty-intermediate {
+  background-color: rgba(255, 183, 77, 0.15);
+  color: var(--color-warning-text);
+}
+
+.difficulty-advanced {
+  background-color: rgba(239, 83, 80, 0.15);
+  color: var(--color-error-text);
+}
+
+.gameOpening {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-300);
+  font-weight: var(--font-weight-medium);
+}
+
+.gameDescription {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+  flex: 1;
+}
+
+.gameTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: auto;
+}
+
+.tag {
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: var(--font-size-xs);
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-tertiary);
+  border-radius: var(--radius-sm);
+}
+
+/* No Results */
+.noResults {
+  text-align: center;
+  padding: var(--spacing-12) var(--spacing-6);
+}
+
+.noResults p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-6);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--color-border-primary);
+}
+
+.footerText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+
+  .header {
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+
+  .archetypeDisplay {
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .quizBanner {
+    padding: var(--spacing-6);
+  }
+
+  .quizBannerTitle {
+    font-size: var(--font-size-2xl);
+  }
+
+  .gameGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+}
