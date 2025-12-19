@@ -482,13 +482,23 @@ The following corrections were applied to Phase 0 documentation based on spec re
 
 ```
 0f1644c docs: clarify static dataset + player profile terminology
+505763a docs: add Phase 0 corrections summary to PHASE-0-COMPLETE.md
+8d79051 docs: clarify MVP data loading as static imports only
 ```
 
-All corrections applied in a single focused commit covering:
+**Initial corrections** (commits 1-2):
 - Static dataset approach documentation
 - Player Profile terminology standardization
 - CSP chessboard compatibility guidance
 - Dataset validation CI gating (Task 10 reordering)
+
+**Final cleanup** (commit 3):
+- Enhanced ARCHITECTURE.md Section 11.3 to be completely unambiguous
+- Added explicit TypeScript code examples showing static imports
+- Clearly labeled dynamic imports as "Post-MVP / Future Enhancement"
+- Removed any remaining ambiguity: MVP = static imports only, bundled at build time, no runtime fetches
+
+**Why:** Ensures implementers have a single, clear source of truth for MVP data loading behavior. No confusion about when/how data is loaded.
 
 ---
 
