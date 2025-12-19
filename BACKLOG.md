@@ -182,23 +182,27 @@ Tasks are organized into phases to enable parallel work where possible.
 
 ---
 
-### Task 10: Data Validation Tests
+### Task 10: Data Validation Tests (CI GATE - BLOCKING)
 **Priority:** P0 | **Effort:** S | **Dependencies:** Task 5, 8, 9 | **Status:** 🔴 Blocked
 
-**Description:** Write automated tests to validate all JSON data files.
+**Description:** Write automated tests to validate all JSON data files. **THIS IS A CI-BLOCKING GATE.** No UI tasks (11+) should begin until dataset validation passes.
 
 **Definition of Done:**
 - [ ] Create `tests/data-validation/validateGames.test.ts`
 - [ ] Test: All PGN strings in `sample-games.json` are legal (use chess.js)
 - [ ] Test: Ply numbers match move counts
-- [ ] Test: Phase boundaries cover all moves without gaps
-- [ ] Test: Side A and Side B share first move
+- [ ] Test: Phase boundaries cover all moves without gaps or overlaps
+- [ ] Test: Side A and Side B share initial position (first 1-2 moves identical)
 - [ ] Test: All annotation principles exist in knowledge-base.json
 - [ ] Test: quiz-questions.json matches schema
 - [ ] Test: knowledge-base.json matches schema
-- [ ] All data validation tests pass
-- [ ] Add to CI pipeline (npm run test:data-validation)
-- [ ] Commit with message: "test: add data validation suite for game, quiz, and KB JSON"
+- [ ] All data validation tests pass locally
+- [ ] Add to CI pipeline as **required gate** (npm run test:data-validation)
+- [ ] CI must fail if dataset validation fails (blocking)
+- [ ] Document dataset invariants in test output
+- [ ] Commit with message: "test(critical): add CI-blocking data validation suite"
+
+**Gating Rule:** Tasks 11-27 (all UI and feature work) must not begin until this task is complete and passing in CI.
 
 ---
 
@@ -257,19 +261,19 @@ Tasks are organized into phases to enable parallel work where possible.
 
 ## Phase 1E: Feature Implementation
 
-### Task 14: Archetype Context Provider
+### Task 14: Player Profile Context Provider
 **Priority:** P1 | **Effort:** S | **Dependencies:** Task 6, 7 | **Status:** 🔴 Blocked
 
-**Description:** Implement ArchetypeContext for global archetype state.
+**Description:** Implement ArchetypeContext for global Player Profile state (archetype storage and sharing).
 
 **Definition of Done:**
 - [ ] Create `src/providers/ArchetypeContext.tsx` with Context and Provider
 - [ ] Implement useArchetype() custom hook
-- [ ] Load archetype from localStorage on mount
+- [ ] Load Player Profile (archetype) from localStorage on mount
 - [ ] Provide setArchetype() and resetArchetype() functions
 - [ ] Sync changes to localStorage
-- [ ] Write integration tests (set archetype → read from localStorage)
-- [ ] Commit with message: "feat(state): add ArchetypeContext provider"
+- [ ] Write integration tests (set Player Profile → read from localStorage)
+- [ ] Commit with message: "feat(state): add Player Profile (ArchetypeContext) provider"
 
 ---
 
@@ -429,20 +433,20 @@ Tasks are organized into phases to enable parallel work where possible.
 
 ---
 
-### Task 23: Settings Page
+### Task 23: Profile / Settings Page
 **Priority:** P2 | **Effort:** S | **Dependencies:** Task 11, 14 | **Status:** 🔴 Blocked
 
-**Description:** Build settings page with archetype management.
+**Description:** Build Profile / Settings page with Player Profile management.
 
 **Definition of Done:**
 - [ ] Create `src/pages/Settings.tsx`
-- [ ] Display current archetype result with description
+- [ ] Display current Player Profile (archetype) with description
 - [ ] Add "Retake Quiz" button → navigate to /quiz
-- [ ] Add "Reset Quiz" button → clear archetype from localStorage
+- [ ] Add "Reset Profile" button → clear Player Profile from localStorage
 - [ ] Display app version and link to GitHub repo
 - [ ] Add "About" section with app description
-- [ ] Write integration test: reset archetype → localStorage cleared
-- [ ] Commit with message: "feat(pages): add settings page with archetype management"
+- [ ] Write integration test: reset Player Profile → localStorage cleared
+- [ ] Commit with message: "feat(pages): add Profile / Settings page with Player Profile management"
 
 ---
 

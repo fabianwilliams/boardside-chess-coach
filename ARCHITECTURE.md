@@ -188,9 +188,9 @@ boardside-chess-coach/
 | Page | Path | Dependencies | Purpose |
 |------|------|--------------|---------|
 | `Home` | `/` | GameLibrary component, ArchetypeContext | Display game library, entry to quiz |
-| `Quiz` | `/quiz` | QuizEngine, ArchetypeCalculator | Adaptive questionnaire flow |
+| `Quiz` | `/quiz` | QuizEngine, ArchetypeCalculator | Player Profile questionnaire (determines archetype) |
 | `GameViewer` | `/game/:gameId` | ChessGame, MoveNavigator, ChatProvider | Main game interface with tabs |
-| `Settings` | `/settings` | ArchetypeContext, localStorage utils | View/reset archetype |
+| `Settings` | `/settings` | ArchetypeContext, localStorage utils | View/manage Player Profile, retake quiz |
 
 **Design Principles:**
 - Pages should be thin orchestration layers
@@ -492,8 +492,10 @@ function goToMove(ply: number) {
 ### 5.2 localStorage (Persistent User Preferences)
 
 **Stored data:**
-- `boardside_archetype`: User's archetype result ('TJ', 'TP', etc.)
+- `boardside_archetype`: Player Profile archetype ('TJ', 'TP', 'FJ', 'FP', or 'Neutral')
 - `boardside_quiz_answers`: Array of answer indices (for retake comparison)
+
+**Terminology:** "Player Profile" is the user-facing concept; the stored value is the archetype code. The quiz is the mechanism for determining the Player Profile.
 
 **Why localStorage (not sessionStorage):**
 - Persist across browser sessions
@@ -795,12 +797,23 @@ User starts quiz
     }
   },
   "globalHeaders": {
-    "content-security-policy": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:",
+    "content-security-policy": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'",
     "x-frame-options": "DENY",
     "x-content-type-options": "nosniff"
   }
 }
 ```
+
+**CSP Considerations for ChessBoard:**
+- `img-src 'self' data:` allows SVG sprites, data URIs, and bundled images (sufficient for most chessboard renderers)
+- `style-src 'unsafe-inline'` required for CSS Modules inline styles (unavoidable in MVP)
+- If chessboard rendering fails due to CSP violations, check browser console and adjust CSP minimally
+- **Do not weaken CSP beyond what the renderer requires** (maintain security posture)
+- Common adjustments if needed:
+  - Add `blob:` to `img-src` for dynamically generated images
+  - Add specific CDN domains if external piece assets are used (prefer bundled assets)
+
+---
 
 ### 9.2 CI/CD Pipeline
 
@@ -896,13 +909,13 @@ Content-Security-Policy:
 ### 10.3 Data Privacy
 
 **No PII collected:**
-- Archetype result is pseudonymous ('TJ', 'FP', etc.)
+- Player Profile (archetype) is pseudonymous ('TJ', 'FP', etc.)
 - No usernames, emails, or identifying information
 - localStorage is client-side only
 
 **GDPR compliance:**
 - No tracking or analytics in MVP
-- User can clear profile via Settings → Reset Quiz
+- User can clear Player Profile via Settings → Reset Profile
 
 ---
 
@@ -938,13 +951,16 @@ Content-Security-Policy:
 
 ### 11.3 Data Loading
 
-**Static imports:**
-- Games, quiz, KB loaded at build time (bundled)
+**Static imports (MVP):**
+- Single game database file: `sample-games.json` loaded at build time (bundled)
+- Quiz questions and knowledge base also bundled
 - No runtime fetch calls
+- **Rationale:** Intentional MVP simplification for Azure Static Web Apps reliability and CDN caching predictability
 
-**Lazy loading:**
-- Load game data only when selected (not all games at once)
-- Use dynamic imports: `const game = await import(`./data/games/${id}.json`)`
+**Future: Per-game lazy loading (Post-MVP):**
+- When game library grows beyond 10-15 games, consider dynamic imports
+- Pattern: `const game = await import(`./data/games/${id}.json`)`
+- Trade-off: Initial load time vs. total bundle size
 
 ---
 

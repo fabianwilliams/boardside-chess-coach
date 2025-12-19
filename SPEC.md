@@ -102,9 +102,11 @@ For the MVP, we explicitly exclude:
 - Feeling/Judging (FJ): Intuitive, structured, goal-oriented
 - Feeling/Perceiving (FP): Intuitive, flexible, creative
 
-**FR-1.7:** Archetype result must be stored in localStorage
-**FR-1.8:** User must be able to retake quiz at any time via Settings/Profile
-**FR-1.9:** Annotations must subtly adapt language based on archetype (see Section 5.2.5)
+**FR-1.7:** Player Profile (archetype result) must be stored in localStorage
+**FR-1.8:** User must be able to retake quiz at any time via Profile / Settings page
+**FR-1.9:** Annotations must subtly adapt language based on Player Profile archetype (see Section 5.2.5)
+
+**Terminology Note:** The "quiz" is the mechanism for determining the Player Profile; the "Player Profile (Archetype)" is the persistent outcome stored in localStorage. UI copy should refer to "Profile" or "Player Profile" rather than "archetype result" to avoid confusion.
 
 ### 5.2 Game Viewer
 
@@ -231,10 +233,13 @@ Annotations should subtly emphasize different aspects based on archetype:
 
 ### 6.4 Security
 
-**NFR-4.1:** No sensitive data collection (no PII beyond optional archetype preference)
+**NFR-4.1:** No sensitive data collection (no PII beyond optional Player Profile archetype)
 **NFR-4.2:** localStorage data must not include identifiable information
 **NFR-4.3:** No external API calls that could leak user behavior (local KB only for MVP)
-**NFR-4.4:** Content Security Policy must prevent XSS attacks
+**NFR-4.4:** Content Security Policy must prevent XSS attacks while allowing chessboard rendering
+  - CSP must include `img-src 'self' data:` for SVG/data URI piece rendering
+  - If CSP blocks board pieces, update CSP per renderer needs; do not weaken beyond necessity
+  - Monitor browser console for CSP violations during development
 **NFR-4.5:** HTTPS enforced for all production deployments (Azure Static Web Apps default)
 
 ### 6.5 Reliability
@@ -300,14 +305,48 @@ interface Phase {
 }
 ```
 
-### 7.2 Data Validation Rules
+### 7.2 Data Validation Rules & Dataset Invariants
 
-**DV-1:** All PGN strings must be legal chess moves (validated via chess.js during testing)
+**Dataset Invariants (CI-Enforced):**
+
+**DV-1:** All PGN strings must be legal chess moves (validated via chess.js)
+  - Each PGN must replay cleanly without errors
+  - Moves must follow standard chess rules (no illegal positions)
+  - CI gate: Build fails if any PGN is invalid
+
 **DV-2:** Ply numbers must be sequential and match PGN move count
-**DV-3:** Phase ranges must not overlap and must cover all moves in the game
-**DV-4:** Side A and Side B must start with identical first move (1. e4)
+  - Annotations must cover every ply (half-move) in the game
+  - No gaps in ply numbering (1, 2, 3, ... n)
+  - CI gate: Build fails if ply count mismatch detected
+
+**DV-3:** Phase ranges must not overlap and must cover move sequences appropriately
+  - Each phase has distinct fromPly and toPly ranges
+  - No gaps between phases (unless game ends early)
+  - Phases may show "Not reached" for miniatures
+  - CI gate: Build fails if phase boundaries overlap or have invalid ranges
+
+**DV-4:** Side A and Side B must share initial position
+  - First 1-2 moves should be identical to establish common starting point
+  - Divergence point must be clear and annotated
+  - If UI needs to handle different openings per side, document the approach
+  - CI gate: Build fails if sides diverge from move 1 without documentation
+
 **DV-5:** Game IDs must be unique within the database
+  - No duplicate IDs across games array
+  - IDs must be URL-safe (kebab-case)
+
 **DV-6:** Tags must come from predefined list (extensible via ADR process)
+  - Valid tags: opening, middlegame, endgame, tactics, strategy, king-safety, development, etc.
+
+**CI Gating:** Dataset validation is a **required CI gate**. All tests in `tests/data-validation/` must pass before any PR can merge. No UI work should begin until dataset validation is implemented and passing.
+
+**MVP Dataset Approach:**
+The MVP uses a single static JSON file (`/src/data/sample-games.json`) containing all games. This is an intentional simplification for:
+- **Azure Static Web Apps reliability:** Single bundled file eliminates runtime fetch failures
+- **CDN caching predictability:** One asset, one cache entry, consistent performance
+- **Deployment simplicity:** No need to manage multiple game files or dynamic imports in MVP
+
+Future enhancement: If the game library grows beyond 10-15 games, consider per-game lazy loading to reduce initial bundle size.
 
 ### 7.3 Content Authoring Guidelines
 
@@ -326,10 +365,10 @@ interface Phase {
 | Route | Component | Purpose |
 |-------|-----------|---------|
 | `/` | Home | Game library + quiz entry point |
-| `/quiz` | Quiz | Archetype questionnaire |
+| `/quiz` | Quiz | Player Profile questionnaire (determines archetype) |
 | `/game/:gameId` | GameViewer | Main game interface (redirects to Side A by default) |
 | `/game/:gameId?side=A&move=12` | GameViewer | Deep-linked position |
-| `/settings` | Settings | Retake quiz, view archetype, about |
+| `/settings` | Settings | View/manage Player Profile, retake quiz, about |
 
 **Note:** Hash routing (#/) is acceptable for static hosting compatibility.
 
@@ -337,8 +376,8 @@ interface Phase {
 
 **Header:**
 - Logo/Title: "Boardside Chess Coach"
-- Navigation: Home, Settings
-- Archetype badge (subtle indicator, e.g., "TJ" icon)
+- Navigation: Home, Profile (link to `/settings`)
+- Player Profile badge (subtle indicator, e.g., "TJ" icon)
 
 **Game Viewer Layout (Desktop):**
 ```
@@ -461,12 +500,33 @@ interface Phase {
 - Send message → receive response → display in history
 - Context awareness (game ID and move)
 
-### 9.3 Data Validation Tests
+### 9.3 Data Validation Tests (CI GATE - REQUIRED)
 
-**DVT-1:** Validate all PGN strings in sample-games.json are legal
+**Critical:** Dataset validation is a **required CI gate** that must pass before any PR merges. Implement this test suite before beginning UI work (Tasks 11+).
+
+**DVT-1:** Validate all PGN strings in sample-games.json are legal (use chess.js)
+  - Each PGN must replay without errors
+  - Test with chess.js validate() or similar
+
 **DVT-2:** Verify ply numbers match move count
-**DVT-3:** Check phase ranges cover all moves without gaps
-**DVT-4:** Ensure Side A and Side B share first move
+  - Count moves in PGN and compare to annotation ply count
+  - Ensure no gaps in ply sequence
+
+**DVT-3:** Check phase ranges cover all moves without gaps or overlaps
+  - Validate fromPly and toPly boundaries
+  - Ensure no overlapping phase ranges
+
+**DVT-4:** Ensure Side A and Side B share initial position
+  - First 1-2 moves should be identical
+  - Document if divergence is intentional
+
+**DVT-5:** Validate all annotation principles exist in knowledge-base.json
+  - Cross-reference principle names
+  - Fail if missing principles detected
+
+**DVT-6:** Validate quiz-questions.json and knowledge-base.json schemas
+  - TypeScript type checking
+  - JSON structure validation
 
 ### 9.4 Accessibility Tests
 
