@@ -1,0 +1,133 @@
+.container {
+  padding: var(--spacing-6);
+  max-width: var(--max-width-2xl);
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-6);
+  gap: var(--spacing-4);
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Main Content */
+.content {
+  display: grid;
+  grid-template-columns: minmax(400px, 600px) 1fr;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+/* Navigation Controls */
+.controls {
+  display: flex;
+  gap: var(--spacing-2);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--color-border-primary);
+}
+
+.keyboardHints {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+/* Error and Loading States */
+.errorCard,
+.loadingCard {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  text-align: center;
+  max-width: 500px;
+  margin: var(--spacing-12) auto;
+}
+
+.errorCard h2 {
+  color: var(--color-error-text);
+  margin-bottom: var(--spacing-4);
+}
+
+.errorCard p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-6);
+}
+
+.loadingCard p {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .leftColumn {
+    order: 1;
+  }
+
+  .rightColumn {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-4);
+  }
+
+  .header {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+
+  .title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .content {
+    gap: var(--spacing-4);
+  }
+
+  .controls {
+    gap: var(--spacing-1);
+  }
+}
