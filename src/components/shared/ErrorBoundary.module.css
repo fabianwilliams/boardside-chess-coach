@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: var(--spacing-8);
+  background-color: var(--color-bg-secondary);
+}
+
+.content {
+  max-width: 600px;
+  width: 100%;
+  padding: var(--spacing-8);
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-primary);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-error-text);
+  margin-bottom: var(--spacing-4);
+}
+
+.message {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-6);
+  line-height: var(--line-height-relaxed);
+}
+
+.details {
+  margin: var(--spacing-6) 0;
+  text-align: left;
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-base);
+  padding: var(--spacing-4);
+}
+
+.summary {
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-2);
+  user-select: none;
+}
+
+.summary:hover {
+  color: var(--color-text-primary);
+}
+
+.summary:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.errorText {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-error-text);
+  overflow-x: auto;
+  padding: var(--spacing-4);
+  margin: var(--spacing-2) 0 0 0;
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  background-color: var(--color-primary-600);
+  border: none;
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+}
+
+.button:hover {
+  background-color: var(--color-primary-700);
+}
+
+.button:active {
+  background-color: var(--color-primary-800);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: var(--spacing-4);
+  }
+
+  .content {
+    padding: var(--spacing-6);
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
+  }
+
+  .message {
+    font-size: var(--font-size-sm);
+  }
+}
