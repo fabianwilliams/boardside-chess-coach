@@ -1,0 +1,372 @@
+[
+  {
+    "id": "q1",
+    "text": "When analyzing a chess position, what do you find most helpful?",
+    "dimension": "T-F",
+    "answers": [
+      {
+        "id": "q1a1",
+        "text": "Calculating concrete variations and tactical sequences",
+        "scoreTF": 2,
+        "scoreJP": 0
+      },
+      {
+        "id": "q1a2",
+        "text": "Understanding the strategic themes and long-term plans",
+        "scoreTF": -2,
+        "scoreJP": 0
+      },
+      {
+        "id": "q1a3",
+        "text": "Looking at piece placement and positional factors",
+        "scoreTF": -1,
+        "scoreJP": 0
+      },
+      {
+        "id": "q1a4",
+        "text": "Finding forcing moves and immediate threats",
+        "scoreTF": 1,
+        "scoreJP": 0
+      },
+      {
+        "id": "q1a5",
+        "text": "I'm not sure",
+        "scoreTF": 0,
+        "scoreJP": 0
+      }
+    ]
+  },
+  {
+    "id": "q2",
+    "text": "How do you prefer to study chess?",
+    "dimension": "J-P",
+    "answers": [
+      {
+        "id": "q2a1",
+        "text": "Following a structured study plan with specific topics",
+        "scoreTF": 0,
+        "scoreJP": 2
+      },
+      {
+        "id": "q2a2",
+        "text": "Exploring different ideas as they interest me",
+        "scoreTF": 0,
+        "scoreJP": -2
+      },
+      {
+        "id": "q2a3",
+        "text": "Working through a systematic training program",
+        "scoreTF": 0,
+        "scoreJP": 1
+      },
+      {
+        "id": "q2a4",
+        "text": "Playing games and learning from experience",
+        "scoreTF": 0,
+        "scoreJP": -1
+      },
+      {
+        "id": "q2a5",
+        "text": "I'm not sure",
+        "scoreTF": 0,
+        "scoreJP": 0
+      }
+    ]
+  },
+  {
+    "id": "q3",
+    "text": "When facing a difficult position, what's your first instinct?",
+    "dimension": "T-F",
+    "answers": [
+      {
+        "id": "q3a1",
+        "text": "Calculate all possible tactical combinations",
+        "scoreTF": 2,
+        "scoreJP": 0
+      },
+      {
+        "id": "q3a2",
+        "text": "Assess the overall strategic balance",
+        "scoreTF": -2,
+        "scoreJP": 0
+      },
+      {
+        "id": "q3a3",
+        "text": "Look for concrete improvements to my position",
+        "scoreTF": 1,
+        "scoreJP": 0
+      },
+      {
+        "id": "q3a4",
+        "text": "Consider long-term positional factors",
+        "scoreTF": -1,
+        "scoreJP": 0
+      },
+      {
+        "id": "q3a5",
+        "text": "I'm not sure",
+        "scoreTF": 0,
+        "scoreJP": 0
+      }
+    ]
+  },
+  {
+    "id": "q4",
+    "text": "Which type of chess problem do you enjoy most?",
+    "dimension": "J-P",
+    "answers": [
+      {
+        "id": "q4a1",
+        "text": "Tactical puzzles with clear solutions",
+        "scoreTF": 0,
+        "scoreJP": 2
+      },
+      {
+        "id": "q4a2",
+        "text": "Complex positions where I can experiment",
+        "scoreTF": 0,
+        "scoreJP": -2
+      },
+      {
+        "id": "q4a3",
+        "text": "Pattern recognition exercises",
+        "scoreTF": 0,
+        "scoreJP": 1
+      },
+      {
+        "id": "q4a4",
+        "text": "Open-ended strategic positions",
+        "scoreTF": 0,
+        "scoreJP": -1
+      },
+      {
+        "id": "q4a5",
+        "text": "I'm not sure",
+        "scoreTF": 0,
+        "scoreJP": 0
+      }
+    ]
+  },
+  {
+    "id": "q5",
+    "text": "What helps you remember chess concepts best?",
+    "dimension": "T-F",
+    "answers": [
+      {
+        "id": "q5a1",
+        "text": "Memorizing specific tactical patterns and combinations",
+        "scoreTF": 2,
+        "scoreJP": 0
+      },
+      {
+        "id": "q5a2",
+        "text": "Understanding the underlying strategic principles",
+        "scoreTF": -2,
+        "scoreJP": 0
+      },
+      {
+        "id": "q5a3",
+        "text": "Practicing with concrete examples",
+        "scoreTF": 1,
+        "scoreJP": 0
+      },
+      {
+        "id": "q5a4",
+        "text": "Grasping the big picture ideas",
+        "scoreTF": -1,
+        "scoreJP": 0
+      },
+      {
+        "id": "q5a5",
+        "text": "I'm not sure",
+        "scoreTF": 0,
+        "scoreJP": 0
+      }
+    ]
+  },
+  {
+    "id": "q6",
+    "text": "How do you approach learning a new opening?",
+    "dimension": "J-P",
+    "answers": [
+      {
+        "id": "q6a1",
+        "text": "Study the move order and main lines systematically",
+        "scoreTF": 0,
+        "scoreJP": 2
+      },
+      {
+        "id": "q6a2",
+        "text": "Play it in games and figure it out as I go",
+        "scoreTF": 0,
+        "scoreJP": -2
+      },
+      {
+        "id": "q6a3",
+        "text": "Follow a structured repertoire",
+        "scoreTF": 0,
+        "scoreJP": 1
+      },
+      {
+        "id": "q6a4",
+        "text": "Try different variations to see what feels right",
+        "scoreTF": 0,
+        "scoreJP": -1
+      },
+      {
+        "id": "q6a5",
+        "text": "I'm not sure",
+        "scoreTF": 0,
+        "scoreJP": 0
+      }
+    ]
+  },
+  {
+    "id": "q7",
+    "text": "When reviewing your games, what do you focus on?",
+    "dimension": "T-F",
+    "answers": [
+      {
+        "id": "q7a1",
+        "text": "Missed tactical opportunities and blunders",
+        "scoreTF": 2,
+        "scoreJP": 0
+      },
+      {
+        "id": "q7a2",
+        "text": "Strategic mistakes and positional errors",
+        "scoreTF": -2,
+        "scoreJP": 0
+      },
+      {
+        "id": "q7a3",
+        "text": "Concrete moves I should have played",
+        "scoreTF": 1,
+        "scoreJP": 0
+      },
+      {
+        "id": "q7a4",
+        "text": "Plans and ideas I missed",
+        "scoreTF": -1,
+        "scoreJP": 0
+      },
+      {
+        "id": "q7a5",
+        "text": "I'm not sure",
+        "scoreTF": 0,
+        "scoreJP": 0
+      }
+    ]
+  },
+  {
+    "id": "q8",
+    "text": "What's your ideal training routine?",
+    "dimension": "J-P",
+    "answers": [
+      {
+        "id": "q8a1",
+        "text": "A daily schedule with set topics and exercises",
+        "scoreTF": 0,
+        "scoreJP": 2
+      },
+      {
+        "id": "q8a2",
+        "text": "Flexible training based on what interests me that day",
+        "scoreTF": 0,
+        "scoreJP": -2
+      },
+      {
+        "id": "q8a3",
+        "text": "Following a training program consistently",
+        "scoreTF": 0,
+        "scoreJP": 1
+      },
+      {
+        "id": "q8a4",
+        "text": "Adapting my training to how I'm feeling",
+        "scoreTF": 0,
+        "scoreJP": -1
+      },
+      {
+        "id": "q8a5",
+        "text": "I'm not sure",
+        "scoreTF": 0,
+        "scoreJP": 0
+      }
+    ]
+  },
+  {
+    "id": "q9",
+    "text": "Which type of explanation do you find most useful?",
+    "dimension": "T-F",
+    "answers": [
+      {
+        "id": "q9a1",
+        "text": "Step-by-step calculation of moves",
+        "scoreTF": 2,
+        "scoreJP": 0
+      },
+      {
+        "id": "q9a2",
+        "text": "High-level strategic concepts and themes",
+        "scoreTF": -2,
+        "scoreJP": 0
+      },
+      {
+        "id": "q9a3",
+        "text": "Specific move sequences with variations",
+        "scoreTF": 1,
+        "scoreJP": 0
+      },
+      {
+        "id": "q9a4",
+        "text": "General principles and patterns",
+        "scoreTF": -1,
+        "scoreJP": 0
+      },
+      {
+        "id": "q9a5",
+        "text": "I'm not sure",
+        "scoreTF": 0,
+        "scoreJP": 0
+      }
+    ]
+  },
+  {
+    "id": "q10",
+    "text": "How do you like to practice new concepts?",
+    "dimension": "J-P",
+    "answers": [
+      {
+        "id": "q10a1",
+        "text": "Through structured exercises and drills",
+        "scoreTF": 0,
+        "scoreJP": 2
+      },
+      {
+        "id": "q10a2",
+        "text": "By trying them out in games and experimenting",
+        "scoreTF": 0,
+        "scoreJP": -2
+      },
+      {
+        "id": "q10a3",
+        "text": "With a methodical approach to mastery",
+        "scoreTF": 0,
+        "scoreJP": 1
+      },
+      {
+        "id": "q10a4",
+        "text": "Through free play and exploration",
+        "scoreTF": 0,
+        "scoreJP": -1
+      },
+      {
+        "id": "q10a5",
+        "text": "I'm not sure",
+        "scoreTF": 0,
+        "scoreJP": 0
+      }
+    ]
+  }
+]
